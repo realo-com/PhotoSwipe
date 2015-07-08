@@ -122,6 +122,21 @@
 	background-position: -132px 0;
 }
 
+
+//New!
+.pswp__button--pdf--zoom {
+	display: none;
+	background-position: -88px 0;
+}
+
+.pswp--pdf--zoom-allowed .pswp__button--pdf--zoom {
+	display: block;
+}
+
+.pswp--pdf--zoomed-in .pswp__button--pdf--zoom {
+	background-position: -132px 0;
+}
+
 /* no arrows on touch screens */
 .pswp--touch {
 	.pswp__button--arrow--left,

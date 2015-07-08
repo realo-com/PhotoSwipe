@@ -10,19 +10,6 @@ module.exports = function(grunt) {
 
   'use strict';
 
-  var jekyllConfig = "isLocal : false \r\n"+
-      "permalink: /:title/ \r\n"+
-      "exclude: ['.json', '.rvmrc', '.rbenv-version', 'README.md', 'Rakefile'," +
-                "'changelog.md', 'compiler.jar', 'private', '.htaccess'," + 
-                "'photoswipe.sublime-project', 'photoswipe.sublime-workspace'] \r\n"+
-
-      "auto: true \r\n"+
-      "pswpversion: <%= pkg.version %> \r\n"+
-      "siteversion: 1.0.4 \r\n"+
-      "markdown: redcarpet \r\n"+
-      "kramdown: \r\n"+
-      "  input: GFM \r\n";
-  
   var awsDefaults = {};
   if( grunt.file.exists('./aws-keys.json') ) {
     awsDefaults = grunt.file.readJSON('./aws-keys.json');
@@ -97,26 +84,6 @@ module.exports = function(grunt) {
       }
     },
 
-    jekyll: {
-      dev: {
-        options: {
-          src: 'website',
-          dest: '_site',
-          url: 'local',
-          raw: jekyllConfig + "url: local"
-        }
-        
-      },
-      production: {
-        options: {
-          src: 'website',
-          dest: '_production',
-          url: 'production',
-          raw: jekyllConfig + "url: production"
-        }
-      }
-    },
-
     copy: {
       dev: {
         files: [
@@ -148,10 +115,6 @@ module.exports = function(grunt) {
     },
 
     watch: { // for development run 'grunt watch'
-      jekyll: {
-        files: ['website/**', 'website/documentation/**', '_includes/**'],
-        tasks: ['jekyll:dev', 'copy:dev']
-      },
       files: ['src/**'],
       tasks: [ 'sass', 'autoprefixer', 'pswpbuild', 'copy:dev', 'uglify']
     },
@@ -277,9 +240,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-svgmin');
 
   // Default task.
-  grunt.registerTask('default', ['sass', 'autoprefixer', 'pswpbuild','uglify', 'copy', 'jekyll:dev']);
+  grunt.registerTask('default', ['sass', 'autoprefixer', 'pswpbuild','uglify', 'copy']);
 
-  grunt.registerTask('production', ['sass', 'autoprefixer', 'pswpbuild', 'uglify', 'copy', 'cssmin', 'jekyll:production']);
+  grunt.registerTask('production', ['sass', 'autoprefixer', 'pswpbuild', 'uglify', 'copy', 'cssmin']);
   grunt.registerTask('nosite', ['sass', 'autoprefixer', 'pswpbuild', 'uglify']);
   grunt.registerTask('hint', ['jshint']);
   grunt.registerTask('awsupload', ['aws_s3']);

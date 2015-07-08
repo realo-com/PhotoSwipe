@@ -1,4 +1,4 @@
-/*! PhotoSwipe - v4.0.8 - 2015-05-21
+/*! PhotoSwipe - v4.0.8 - 2015-07-08
 * http://photoswipe.com
 * Copyright (c) 2015 Dmitry Semenov; */
 (function (root, factory) { 
@@ -1296,9 +1296,11 @@ var publicMethods = {
 		} else {
 			onUpdate(1);
 		}
+	},
+
+	togglePdfZoom: function() {
+		_shout('togglePdfZoom');
 	}
-
-
 };
 
 
@@ -1307,6 +1309,7 @@ var publicMethods = {
 /*>>gestures*/
 /**
  * Mouse/touch/pointer event handlers.
+ *
  * 
  * separated from @core.js for readability
  */
@@ -3328,7 +3331,9 @@ _registerModule('DesktopZoom', {
 				if( _options.modal ) {
 
 					if ( !_options.closeOnScroll ) {
-						e.preventDefault();
+						if(self.currItem.type !== 'pdf') {
+							e.preventDefault();
+						}
 					} else if( _transformKey && Math.abs(e.deltaY) > 2 ) {
 						// close PhotoSwipe
 						// if browser supports transforms & scroll changed enough

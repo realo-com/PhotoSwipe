@@ -1,4 +1,4 @@
-/*! PhotoSwipe Default UI - 4.0.8 - 2015-05-21
+/*! PhotoSwipe Default UI - 4.0.8 - 2015-07-08
 * http://photoswipe.com
 * Copyright (c) 2015 Dmitry Semenov; */
 /**
@@ -66,6 +66,7 @@ var PhotoSwipeUI_Default =
 			captionEl: true,
 			fullscreenEl: true,
 			zoomEl: true,
+			pdfzoomEl: true,
 			shareEl: true,
 			counterEl: true,
 			arrowEl: true,
@@ -448,6 +449,11 @@ var PhotoSwipeUI_Default =
 			name: 'button--zoom', 
 			option: 'zoomEl',
 			onTap: pswp.toggleDesktopZoom
+		},
+		{ 
+			name: 'button--pdf--zoom', 
+			option: 'pdfzoomEl',
+			onTap: pswp.togglePdfZoom
 		},
 		{ 
 			name: 'counter', 

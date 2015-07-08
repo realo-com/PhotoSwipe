@@ -998,7 +998,9 @@ var publicMethods = {
 		} else {
 			onUpdate(1);
 		}
+	},
+
+	togglePdfZoom: function() {
+		_shout('togglePdfZoom');
 	}
-
-
 };

@@ -1,5 +1,6 @@
 /**
  * Mouse/touch/pointer event handlers.
+ *
  * 
  * separated from @core.js for readability
  */

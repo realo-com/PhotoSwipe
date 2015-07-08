@@ -94,7 +94,9 @@ _registerModule('DesktopZoom', {
 				if( _options.modal ) {
 
 					if ( !_options.closeOnScroll ) {
-						e.preventDefault();
+						if(self.currItem.type !== 'pdf') {
+							e.preventDefault();
+						}
 					} else if( _transformKey && Math.abs(e.deltaY) > 2 ) {
 						// close PhotoSwipe
 						// if browser supports transforms & scroll changed enough

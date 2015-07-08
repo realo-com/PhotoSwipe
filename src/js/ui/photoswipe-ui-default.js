@@ -63,6 +63,7 @@ var PhotoSwipeUI_Default =
 			captionEl: true,
 			fullscreenEl: true,
 			zoomEl: true,
+			pdfzoomEl: true,
 			shareEl: true,
 			counterEl: true,
 			arrowEl: true,
@@ -445,6 +446,11 @@ var PhotoSwipeUI_Default =
 			name: 'button--zoom', 
 			option: 'zoomEl',
 			onTap: pswp.toggleDesktopZoom
+		},
+		{ 
+			name: 'button--pdf--zoom', 
+			option: 'pdfzoomEl',
+			onTap: pswp.togglePdfZoom
 		},
 		{ 
 			name: 'counter', 
