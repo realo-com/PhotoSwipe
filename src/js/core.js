@@ -1002,5 +1002,13 @@ var publicMethods = {
 
 	togglePdfZoom: function() {
 		_shout('togglePdfZoom');
+	},
+
+	download: function() {
+		_shout('download');
+	},
+
+	print: function() {
+		_shout('print');
 	}
 };

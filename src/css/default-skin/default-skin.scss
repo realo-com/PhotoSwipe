@@ -27,7 +27,8 @@
  */
 
 /* <button> css reset */
-.pswp__button {
+.pswp__button,
+.pswp__button__realo {
 	width: 44px;
 	height: 44px;
 	position: relative;
@@ -57,6 +58,14 @@
 	&::-moz-focus-inner {
 		padding: 0;
 		border: 0
+	}
+	
+	//Realo!!!!
+	line-height: 44px;
+	color: #fff;
+
+	i {
+		pointer-events: none;
 	}
 }
 
@@ -109,6 +118,7 @@
 	background-position: -44px 0;
 }
 
+/*
 .pswp__button--zoom {
 	display: none;
 	background-position: -88px 0;
@@ -121,21 +131,50 @@
 .pswp--zoomed-in .pswp__button--zoom {
 	background-position: -132px 0;
 }
+*/
 
-
-//New!
-.pswp__button--pdf--zoom {
+//Realo!!!!
+.pswp__button--zoom,
+.pswp__button--pdf--zoom, {
 	display: none;
-	background-position: -88px 0;
 }
 
-.pswp--pdf--zoom-allowed .pswp__button--pdf--zoom {
+.pswp--zoom-allowed .pswp__button--zoom,
+.pswp--pdf--zoom-allowed .pswp__button--pdf--zoom, {
+	display: block;
+	i.icn-zoom-out {
+		display: none;
+	}
+}
+
+.pswp--zoomed-in .pswp__button--zoom,
+.pswp--pdf--zoomed-in .pswp__button--pdf--zoom {
+	i.icn-zoom-in {
+		display: none;
+	}
+	i.icn-zoom-out {
+		display: block;
+	}
+}
+
+//Download button
+.pswp__button--download {
+	display: none;
+}
+
+.pswp--download-allowed .pswp__button--download {
 	display: block;
 }
 
-.pswp--pdf--zoomed-in .pswp__button--pdf--zoom {
-	background-position: -132px 0;
+//Print button
+.pswp__button--print {
+	display: none;
 }
+
+.pswp--print-allowed .pswp__button--print {
+	display: block;
+}
+
 
 /* no arrows on touch screens */
 .pswp--touch {

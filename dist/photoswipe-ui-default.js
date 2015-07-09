@@ -1,4 +1,4 @@
-/*! PhotoSwipe Default UI - 4.0.8 - 2015-07-08
+/*! PhotoSwipe Default UI - 4.0.8 - 2015-07-09
 * http://photoswipe.com
 * Copyright (c) 2015 Dmitry Semenov; */
 /**
@@ -67,6 +67,8 @@ var PhotoSwipeUI_Default =
 			fullscreenEl: true,
 			zoomEl: true,
 			pdfzoomEl: true,
+			downloadEl: true,
+			printEl: true,
 			shareEl: true,
 			counterEl: true,
 			arrowEl: true,
@@ -454,6 +456,16 @@ var PhotoSwipeUI_Default =
 			name: 'button--pdf--zoom', 
 			option: 'pdfzoomEl',
 			onTap: pswp.togglePdfZoom
+		},
+		{ 
+			name: 'button--download', 
+			option: 'downloadEl',
+			onTap: pswp.download
+		},
+		{ 
+			name: 'button--print', 
+			option: 'printEl',
+			onTap: pswp.print
 		},
 		{ 
 			name: 'counter', 

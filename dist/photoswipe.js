@@ -1,4 +1,4 @@
-/*! PhotoSwipe - v4.0.8 - 2015-07-08
+/*! PhotoSwipe - v4.0.8 - 2015-07-09
 * http://photoswipe.com
 * Copyright (c) 2015 Dmitry Semenov; */
 (function (root, factory) { 
@@ -1300,6 +1300,14 @@ var publicMethods = {
 
 	togglePdfZoom: function() {
 		_shout('togglePdfZoom');
+	},
+
+	download: function() {
+		_shout('download');
+	},
+
+	print: function() {
+		_shout('print');
 	}
 };
 

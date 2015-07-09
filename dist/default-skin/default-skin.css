@@ -17,7 +17,8 @@
 
  */
 /* <button> css reset */
-.pswp__button {
+.pswp__button,
+.pswp__button__realo {
   width: 44px;
   height: 44px;
   position: relative;
@@ -34,16 +35,25 @@
   -webkit-transition: opacity 0.2s;
           transition: opacity 0.2s;
   -webkit-box-shadow: none;
-          box-shadow: none; }
+          box-shadow: none;
+  line-height: 44px;
+  color: #fff; }
   .pswp__button:focus,
-  .pswp__button:hover {
+  .pswp__button:hover,
+  .pswp__button__realo:focus,
+  .pswp__button__realo:hover {
     opacity: 1; }
-  .pswp__button:active {
+  .pswp__button:active,
+  .pswp__button__realo:active {
     outline: none;
     opacity: 0.9; }
-  .pswp__button::-moz-focus-inner {
+  .pswp__button::-moz-focus-inner,
+  .pswp__button__realo::-moz-focus-inner {
     padding: 0;
     border: 0; }
+  .pswp__button i,
+  .pswp__button__realo i {
+    pointer-events: none; }
 
 /* pswp__ui--over-close class it added when mouse is over element that should close gallery */
 .pswp__ui--over-close .pswp__button--close {
@@ -82,25 +92,50 @@
 .pswp--fs .pswp__button--fs {
   background-position: -44px 0; }
 
+/*
 .pswp__button--zoom {
-  display: none;
-  background-position: -88px 0; }
+	display: none;
+	background-position: -88px 0;
+}
 
 .pswp--zoom-allowed .pswp__button--zoom {
-  display: block; }
+	display: block;
+}
 
 .pswp--zoomed-in .pswp__button--zoom {
-  background-position: -132px 0; }
-
+	background-position: -132px 0;
+}
+*/
+.pswp__button--zoom,
 .pswp__button--pdf--zoom {
-  display: none;
-  background-position: -88px 0; }
+  display: none; }
 
+.pswp--zoom-allowed .pswp__button--zoom,
 .pswp--pdf--zoom-allowed .pswp__button--pdf--zoom {
   display: block; }
+  .pswp--zoom-allowed .pswp__button--zoom i.icn-zoom-out,
+  .pswp--pdf--zoom-allowed .pswp__button--pdf--zoom i.icn-zoom-out {
+    display: none; }
 
-.pswp--pdf--zoomed-in .pswp__button--pdf--zoom {
-  background-position: -132px 0; }
+.pswp--zoomed-in .pswp__button--zoom i.icn-zoom-in,
+.pswp--pdf--zoomed-in .pswp__button--pdf--zoom i.icn-zoom-in {
+  display: none; }
+
+.pswp--zoomed-in .pswp__button--zoom i.icn-zoom-out,
+.pswp--pdf--zoomed-in .pswp__button--pdf--zoom i.icn-zoom-out {
+  display: block; }
+
+.pswp__button--download {
+  display: none; }
+
+.pswp--download-allowed .pswp__button--download {
+  display: block; }
+
+.pswp__button--print {
+  display: none; }
+
+.pswp--print-allowed .pswp__button--print {
+  display: block; }
 
 /* no arrows on touch screens */
 .pswp--touch .pswp__button--arrow--left,
