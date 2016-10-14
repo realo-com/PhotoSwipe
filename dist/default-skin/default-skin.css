@@ -38,8 +38,7 @@
           box-shadow: none;
   line-height: 44px;
   color: #fff; }
-  .pswp__button:focus,
-  .pswp__button:hover,
+  .pswp__button:focus, .pswp__button:hover,
   .pswp__button__realo:focus,
   .pswp__button__realo:hover {
     opacity: 1; }
